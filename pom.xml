@@ -113,12 +113,12 @@
         </dependency>
 
 
-        <!-- 定时器任务 quartz需要导入的坐标 -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>1.8.5</version>
-        </dependency>
+        <!--&lt;!&ndash; 定时器任务 quartz需要导入的坐标 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.quartz-scheduler</groupId>-->
+            <!--<artifactId>quartz</artifactId>-->
+            <!--<version>1.8.5</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 
