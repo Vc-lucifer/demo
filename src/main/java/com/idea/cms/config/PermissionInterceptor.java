@@ -47,20 +47,46 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json; charset=utf-8");
 		JSONObject res = new JSONObject();
-		HttpSession session = request.getSession();
 		boolean flag=false;
-		Object permission = session.getAttribute("permission");
-		//modify by L
-		if (permission==null){
+		//session 权限校验
+//		HttpSession session = request.getSession();
+//		Object permission = session.getAttribute("permission");
+//		//modify by L
+//		if (permission==null){
+//			res.put("success","false");
+//			res.put("msg","你没有权限");
+//			response.getWriter().append(res.toString());
+//			return false;
+//		}
+//		String   sa   = permission.toString();
+//		sa=sa.substring(1,sa.length()-1);
+//		sa=sa.replaceAll(" ", "");
+//		String [] stringArr= sa.split(",");
+//		String requestUrl = request.getRequestURL().toString();
+//		String url=parseSuffix(requestUrl);
+//		flag=  Arrays.asList(stringArr).contains(url);
+//		if(flag){
+//			return true;
+//		}else{
+//			res.put("success","false");
+//			res.put("msg","你没有权限a");
+//			response.getWriter().append(res.toString());
+//			return false;
+//		}
+
+		//redis权限校验
+		//从header中得到当前登录用户,beile应该是个常量,key值
+		String userName = request.getHeader("beile");
+		String permission = redisUtil.get(userName);
+		if (StringUtils.isEmpty(permission)){
 			res.put("success","false");
 			res.put("msg","你没有权限");
 			response.getWriter().append(res.toString());
 			return false;
 		}
-		String   sa   = permission.toString();
-		sa=sa.substring(1,sa.length()-1);
-		sa=sa.replaceAll(" ", "");
-		String [] stringArr= sa.split(",");
+		permission=permission.substring(1,permission.length()-1);
+		permission=permission.replaceAll(" ", "");
+		String [] stringArr= permission.split(",");
 		String requestUrl = request.getRequestURL().toString();
 		String url=parseSuffix(requestUrl);
 		flag=  Arrays.asList(stringArr).contains(url);
@@ -84,6 +110,5 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			throws Exception {
 	}
 
-
-
 }
+

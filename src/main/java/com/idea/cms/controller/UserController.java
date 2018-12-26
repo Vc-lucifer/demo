@@ -119,11 +119,11 @@ public class UserController {
     public InvokerResult addRedis(@RequestBody User user){
         InvokerResult result = new InvokerResult();
         try {
-            redisUtil.setexObj("001",100000,user);
-            User redis = redisUtil.getObj("001", User.class);
-            result.setResultData(redis);
-//            redisUtil.set("8080","这是redis基础存储测试");
-//            System.out.println(redisUtil.get("8080"));
+//            redisUtil.setexObj("001",100000,user);
+//            User redis = redisUtil.getObj("001", User.class);
+//            result.setResultData(redis);
+            redisUtil.set("8080","这是redis基础存储测试");
+            System.out.println(redisUtil.get("8080"));
         }catch (BeileException e){
             result = e.toInvokerResult();
         }catch (Exception ex){

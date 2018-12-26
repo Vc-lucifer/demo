@@ -13,5 +13,12 @@ public class Path {
     public static final String MULTI2_SEND = "multi2MultiSend";
     public static final String TOPIC_SEND = "topicSend1";
     public static final String TOPIC2_SEND = "topicSend2";
+    public void add(){
+        test test = new test();
+        Object o = new Object();
+    }
+    public class test{
+
+    }
 
 }
