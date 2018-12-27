@@ -73,7 +73,7 @@ public class UserService {
      * @param password
      * @return map{token,manager,permission}
      */
-    public User login(String phone, String password){
+    public User login(String phone, String password) {
         //根据用户名和密码找到Manager
         User manager = userDao.findByUserNameAndPassword(phone, password);
         if (manager == null) {
@@ -86,33 +86,33 @@ public class UserService {
         userDao.save(manager);
         //用户放入缓存
         loginUsers.put(manager.userName, manager);
-        logger.info("用户{}登录成功",manager.userName);
+        logger.info("用户{}登录成功", manager.userName);
         return manager;
     }
 
-    public void getRedis(){
-        redisUtil.setEx("admin","user",18000);
-        if (redisUtil==null){
+    public void getRedis() {
+        redisUtil.setEx("admin", "user", 18000);
+        if (redisUtil == null) {
             this.logger.error("redis未注入");
         }
-        while (StringUtils.isEmpty(logger)){
+        while (StringUtils.isEmpty(logger)) {
             logger.info("");
         }
     }
 
     /**
-     *
      * 注册/编辑用户
+     *
      * @param user
      * @return user
      */
-    public User addUser(User user){
-        if (StringUtils.isEmpty(user.userName)){
+    public User addUser(User user) {
+        if (StringUtils.isEmpty(user.userName)) {
             CMSException exception = new CMSException(ERR_BASE_FAIL_INSERT);
             logger.info(exception.getResultContent());
             throw exception;
         }
-        if (StringUtils.isEmpty(user.password)){
+        if (StringUtils.isEmpty(user.password)) {
             throw new CMSException(ERR_BASE_FAIL_INSERT);
         }
         user.password = Base64Utils.encodeBase64(user.password);

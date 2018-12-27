@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class Receiver1 {
 
     @RabbitHandler
-    public void receiver(User user){
-        System.out.println("Test1 receiver1:"+user.userName);
+    public void receiver(User user) {
+        System.out.println("Test1 receiver1:" + user.userName);
     }
 
 }

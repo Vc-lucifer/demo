@@ -28,8 +28,6 @@ public class UserController {
     private RedisUtil redisUtil;
 
 
-
-
     /**
      * 用户登录
      *
@@ -53,20 +51,20 @@ public class UserController {
     }
 
     /**
-     *
      * 用户编辑/注册
+     *
      * @param user 用户
      * @return
      */
-    @RequestMapping(value = "addUser",method = RequestMethod.POST)
-    public InvokerResult addUser(@RequestBody User user){
+    @RequestMapping(value = "addUser", method = RequestMethod.POST)
+    public InvokerResult addUser(@RequestBody User user) {
         InvokerResult result = new InvokerResult();
         try {
             User save = userService.addUser(user);
             result.setResultData(save);
-        }catch (BeileException e){
+        } catch (BeileException e) {
             result = e.toInvokerResult();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             result.setResultContent(ex.toString());
         }
         return result;
@@ -96,6 +94,7 @@ public class UserController {
     /**
      * get redis value by key
      * RedisTemplate
+     *
      * @param user
      * @return
      */
@@ -114,19 +113,18 @@ public class UserController {
         }
         return result;
     }*/
-
-    @RequestMapping(value = "addRedis",method = RequestMethod.POST)
-    public InvokerResult addRedis(@RequestBody User user){
+    @RequestMapping(value = "addRedis", method = RequestMethod.POST)
+    public InvokerResult addRedis(@RequestBody User user) {
         InvokerResult result = new InvokerResult();
         try {
 //            redisUtil.setexObj("001",100000,user);
 //            User redis = redisUtil.getObj("001", User.class);
 //            result.setResultData(redis);
-            redisUtil.set("8080","这是redis基础存储测试");
+            redisUtil.set("8080", "这是redis基础存储测试");
             System.out.println(redisUtil.get("8080"));
-        }catch (BeileException e){
+        } catch (BeileException e) {
             result = e.toInvokerResult();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             result.setResultContent(ex.toString());
         }
         return result;

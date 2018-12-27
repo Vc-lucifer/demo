@@ -6,7 +6,6 @@ package com.idea.cms.transport.exception;
 
 public class CMSException extends BeileException {
 
-
     /**
      * @Fields serialVersionUID :
      */
@@ -24,8 +23,8 @@ public class CMSException extends BeileException {
 
         ERR_EXCEPTION(CMS, "未知异常错误"),
 
-        ERR_BASE_LOGIN(CMS+1,"登录失败,用户不存在"),
-        ERR_BASE_NOT_LOGIN(CMS+2,"User doesn't login"),
+        ERR_BASE_LOGIN(CMS + 1, "登录失败,用户不存在"),
+        ERR_BASE_NOT_LOGIN(CMS + 2, "User doesn't login"),
         ERR_BASE_FAIL_INSERT(CMS + 2, "保存失败"),
         ERR_BASE_FAIL_DELETE(CMS + 3, "删除失败"),
         ERR_BASE_FAIL_UPDATE(CMS + 4, "更新失败"),

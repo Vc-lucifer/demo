@@ -17,7 +17,7 @@ public class Test {
             System.err.println("To90To;'".length());*/
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String str = "2018-12-21 19:03:00";
+        String str = "2018-12-27 19:03:00";
         Date date = new Date();
         long startTime = date.getTime();
         Date parse = format.parse(str);

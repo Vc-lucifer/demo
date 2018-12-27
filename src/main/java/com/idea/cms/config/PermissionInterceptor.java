@@ -69,7 +69,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 //			return true;
 //		}else{
 //			res.put("success","false");
-//			res.put("msg","你没有权限a");
+//			res.put("msg","你没有权限");
 //			response.getWriter().append(res.toString());
 //			return false;
 //		}
@@ -94,7 +94,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			return true;
 		}else{
 			res.put("success","false");
-			res.put("msg","你没有权限a");
+			res.put("msg","你没有权限");
 			response.getWriter().append(res.toString());
 			return false;
 		}

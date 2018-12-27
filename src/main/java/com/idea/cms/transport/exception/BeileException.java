@@ -18,8 +18,9 @@ public class BeileException extends RuntimeException {
     private int resultCode;
 
     public BeileException(String resultContent) {
-        this(resultContent,100);
+        this(resultContent, 100);
     }
+
     public BeileException(String resultContent, int resultCode) {
         super();
         this.resultContent = resultContent;
@@ -43,7 +44,7 @@ public class BeileException extends RuntimeException {
         this.resultCode = resultCode;
     }
 
-    public InvokerResult toInvokerResult(){
+    public InvokerResult toInvokerResult() {
         InvokerResult invokerResult = new InvokerResult();
         invokerResult.setResultCode(this.resultCode);
         invokerResult.setResultContent(this.resultContent);
