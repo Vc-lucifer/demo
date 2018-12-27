@@ -31,8 +31,7 @@ public class ScheduledDemo {
     public void work() throws Exception {
         System.out.println("执行调度任务： 每分钟执行一次" + format.format(new Date()));
         logger.info("===执行调度任务： 每分钟执行一次: 第{}次执行方法", fixedDelayCount++);
-        logger.info(Thread.currentThread().getName());
-
+//        logger.info(Thread.currentThread().getName());
         logger.info("每一秒执行一次的定时任务 test = {}", test(1) + "");
     }
 
@@ -40,7 +39,7 @@ public class ScheduledDemo {
     public void doSomething() throws Exception {
         System.err.println("每2秒执行一个的定时任务：" + format.format(new Date()));
         logger.info("===每2秒执行一个的定时任务: 第{}次执行方法", initialDelayCount++);
-        logger.info(Thread.currentThread().getName());
+//        logger.info(Thread.currentThread().getName());
         logger.info("每两秒执行一次的定时任务 test = {}", test(2) + "");
     }
 
@@ -49,7 +48,7 @@ public class ScheduledDemo {
     public void fuck() throws Exception {
         System.err.println("每2秒执行一个的定时任务：" + format.format(new Date()));
         logger.info("===每3秒执行一个的定时任务: 第{}次执行方法", initialDelayCount++);
-        logger.info(Thread.currentThread().getName());
+//        logger.info(Thread.currentThread().getName());
         logger.info("每三秒执行一次的定时任务 test = {}", test(3) + "");
     }
 
@@ -57,7 +56,7 @@ public class ScheduledDemo {
     public void shit() throws Exception {
         System.err.println("每2秒执行一个的定时任务：" + format.format(new Date()));
         logger.info("===每4秒执行一个的定时任务: 第{}次执行方法", initialDelayCount++);
-        logger.info(Thread.currentThread().getName());
+//        logger.info(Thread.currentThread().getName());
         logger.info("每四秒执行一次的定时任务 test = {}", test(4) + "");
     }
 
@@ -74,7 +73,7 @@ public class ScheduledDemo {
     public void goWork() throws Exception {
 //        System.out.println("每一小时执行一次的定时任务："+format.format(new Date()));
         logger.info("===每一小时执行一次的定时任务: 第{}次执行方法", cronCount++);
-        logger.info(Thread.currentThread().getName());
+//        logger.info(Thread.currentThread().getName());
     }
 
     int x = 1;

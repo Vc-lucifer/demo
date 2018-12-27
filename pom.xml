@@ -112,13 +112,12 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
-
-        <!--&lt;!&ndash; 定时器任务 quartz需要导入的坐标 &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.quartz-scheduler</groupId>-->
-            <!--<artifactId>quartz</artifactId>-->
-            <!--<version>1.8.5</version>-->
-        <!--</dependency>-->
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
 
     </dependencies>
 

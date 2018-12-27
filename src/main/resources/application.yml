@@ -1,3 +1,6 @@
+server:
+    port: 8848
+
 logging:
     file: /log/boot-doc.log
     level:
@@ -7,8 +10,7 @@ logging:
                     descriptor:
                         sql:
                             BasicBinder: trace
-server:
-    port: 8848
+
 spring:
     application:
         name: spirng-boot-rabbitmq
