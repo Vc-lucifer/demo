@@ -2,7 +2,8 @@
 spring boot learning
 
 spring boot项目
-持久层使用spring data
-整合redis
-整合RabbitMQ
-使用谷歌的cache
+持久层spring data
+数据库连接 hikari
+redis的demo
+RabbitMQ的demo
+定时任务使用的Scheduled
